@@ -71,7 +71,7 @@ header{
     width: 93%;
     max-width: 1200px;
     margin: 80px auto;
-    box-sizing:border-box;
+    box-sizing: border-box;
 }
 .section-title h1{
     text-align: center;
@@ -116,14 +116,91 @@ header{
     margin-bottom: 2px;
 }
 
+.pricing{
+    width: 95%;
+    max-width: 1000px;
+    margin: 80px auto;
+    box-sizing: border-box;
+}
 .title-pricing h1{
     text-align: center;
     margin-bottom: 15px;
     font-size: 50px;
 }
-
 .title-pricing p{
     text-align: center;
     color: #575757;
     margin-bottom: 50px;
+}
+.pricing-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+}
+.pricing-card{
+    border-radius: 13px;
+    overflow: hidden;
+    padding: 35px;
+}
+.pricing-card p{
+    margin-bottom: 10px;
+    color: #777;
+}
+.pricing-card h2{
+   font-size: 50px;
+}
+.pricing-container hr{
+    color: lightgray;
+    margin-bottom: 11px;
+}
+.pricing-card ul{
+    margin-bottom: 15px;
+    list-style: disc;
+    padding-left: 1rem;
+    display: block;
+    font-size: 13px;
+    line-height: 2;
+}
+.btn{
+    width: 100%;
+    padding: 0.875rem;
+    margin-top: 11px;
+    border-radius: 10px;
+    font-weight: 600;
+    background-color: white;
+    border: 1.5px solid blue;
+    cursor: pointer;
+    text-align: center;
+}
+.btn span{
+    color: blue;
+}
+.standard{
+    border: 1.5px solid gainsboro;
+    background-color: white;
+}
+.pro{
+    border: 1.5px solid gainsboro;
+    background-color: darkslategrey;
+    color: #ffffff;
+}
+.pro p{
+    color: cornflowerblue;
+}
+.btn-solid-blue{
+    background-color: blue;
+}
+.btn-solid-blue span{
+    color: white;
+}
+.team{
+    border: 1.5px solid gainsboro;
+    background-color: snow;
+}
+.black-solid-btn{
+    background-color: whitesmoke;
+    border-color: darkslategray;
+}
+.black-solid-btn span{
+    color: black;
 }
