@@ -204,3 +204,263 @@ header{
 .black-solid-btn span{
     color: black;
 }
+
+/* PLACEHOLDER SECTION — AI CHALLENGE */
+/* TRACKS & AGENDA SECTION */
+ 
+.tracks-agenda{
+    width: 93%;
+    max-width: 1200px;
+    margin: 80px auto;
+    box-sizing: border-box;
+}
+ 
+/* Tighten the shared .section-title spacing just for this section,
+   since a subtitle line sits under the heading here */
+.tracks-agenda .section-title h1{
+    margin-bottom: 14px;
+}
+.tracks-agenda-subtitle{
+    text-align: center;
+    color: #575757;
+    font-size: 17px;
+    max-width: 640px;
+    margin: 0 auto 50px auto;
+}
+ 
+/* ---- Icon sprite ----
+   Every icon used in this section is defined once here as a
+   <symbol> and reused everywhere with <use href="#icon-name">.
+   Icons pick up their color automatically from whichever element
+   they're placed in, since every symbol is drawn with currentColor
+   and CSS "color" is inherited. */
+.icon-sprite{
+    display: none;
+}
+.tab-icon{
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+.time-icon{
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+.format-icon{
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+}
+ 
+/* Local accent color per track, scoped to this section only so
+   retheming one track never risks touching global styles */
+.tracks-wrapper{
+    --clr-ai: #7C3AED;
+    --clr-cloud: #2563EB;
+    --clr-frontend: #0D9488;
+    --clr-security: #DC2626;
+}
+ 
+/* ---- Tab inputs (hidden, but still keyboard/click accessible via label) ---- */
+.tab-input{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+ 
+/* ---- Tab navigation ---- */
+.tab-nav{
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 34px;
+}
+.tab-label{
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 13px 26px;
+    border-radius: 10px;
+    border: 1.5px solid whitesmoke;
+    background: snow;
+    color: #575757;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: .25s;
+    user-select: none;
+}
+.tab-ai-label:hover{ border-color: var(--clr-ai); color: var(--clr-ai); }
+.tab-cloud-label:hover{ border-color: var(--clr-cloud); color: var(--clr-cloud); }
+.tab-frontend-label:hover{ border-color: var(--clr-frontend); color: var(--clr-frontend); }
+.tab-security-label:hover{ border-color: var(--clr-security); color: var(--clr-security); }
+ 
+/* Active tab, driven purely by :checked on its radio input */
+#tab-ai:checked ~ .tab-nav .tab-ai-label{
+    background: var(--clr-ai);
+    border-color: var(--clr-ai);
+    color: #ffffff;
+}
+#tab-cloud:checked ~ .tab-nav .tab-cloud-label{
+    background: var(--clr-cloud);
+    border-color: var(--clr-cloud);
+    color: #ffffff;
+}
+#tab-frontend:checked ~ .tab-nav .tab-frontend-label{
+    background: var(--clr-frontend);
+    border-color: var(--clr-frontend);
+    color: #ffffff;
+}
+#tab-security:checked ~ .tab-nav .tab-security-label{
+    background: var(--clr-security);
+    border-color: var(--clr-security);
+    color: #ffffff;
+}
+ 
+/* ---- Difficulty legend ----
+   A quick key so a visitor can scan session levels at a glance
+   before reading every card. */
+.level-legend{
+    display: flex;
+    justify-content: center;
+    gap: 26px;
+    margin-bottom: 28px;
+    font-size: 13px;
+    color: #777;
+}
+.legend-item{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+.level-dot{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+.level-beginner{ color: #16A34A; }
+.level-beginner .level-dot{ background: #16A34A; }
+.level-intermediate{ color: #D97706; }
+.level-intermediate .level-dot{ background: #D97706; }
+.level-advanced{ color: #DC2626; }
+.level-advanced .level-dot{ background: #DC2626; }
+.level-all{ color: #6B7280; }
+.level-all .level-dot{ background: #9CA3AF; }
+ 
+/* ---- Panels ---- */
+.tab-panel{
+    display: none;
+}
+#tab-ai:checked ~ .tab-panels .panel-ai{ display: block; }
+#tab-cloud:checked ~ .tab-panels .panel-cloud{ display: block; }
+#tab-frontend:checked ~ .tab-panels .panel-frontend{ display: block; }
+#tab-security:checked ~ .tab-panels .panel-security{ display: block; }
+ 
+.tab-panels{
+    border: 1.5px solid whitesmoke;
+    border-radius: 16px;
+    background: snow;
+    padding: 6px 40px;
+    box-sizing: border-box;
+}
+ 
+/* ---- Agenda rows ---- */
+.agenda-item{
+    display: flex;
+    align-items: flex-start;
+    gap: 26px;
+    padding: 26px 0;
+    border-bottom: 1px solid whitesmoke;
+}
+.agenda-item:last-child{
+    border-bottom: none;
+}
+ 
+.agenda-when{
+    width: 100px;
+    flex-shrink: 0;
+    display: grid;
+    gap: 6px;
+    padding-top: 2px;
+}
+.agenda-day{
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    color: #1a1a1a;
+}
+.agenda-time{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    color: #999;
+}
+ 
+.agenda-format{
+    width: 120px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 13px;
+    border-radius: 20px;
+    background: whitesmoke;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .3px;
+    margin-top: 2px;
+}
+/* Format badges pick up their track's accent color automatically */
+.panel-ai .agenda-format{ color: var(--clr-ai); }
+.panel-cloud .agenda-format{ color: var(--clr-cloud); }
+.panel-frontend .agenda-format{ color: var(--clr-frontend); }
+.panel-security .agenda-format{ color: var(--clr-security); }
+ 
+.agenda-main{
+    flex: 1;
+}
+.agenda-main h3{
+    font-size: 19px;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+}
+.agenda-speaker{
+    color: #777;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+.agenda-tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.agenda-tag{
+    background: #ffffff;
+    border: 1px solid whitesmoke;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #575757;
+}
+ 
+.agenda-level{
+    width: 130px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 7px;
+    font-size: 13px;
+    font-weight: 700;
+    padding-top: 6px;
+    text-align: right;
+}
+ 

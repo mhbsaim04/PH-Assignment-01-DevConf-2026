@@ -174,7 +174,404 @@
          </div>
         </div>
       </section>
+      
+      <!-- PLACEHOLDER SECTION — AI CHALLENGE -->
+       <!-- Tracks & Agenda Section -->
 
+      <section class="tracks-agenda">
+ 
+        <div class="section-title">
+          <div>
+            <h1>Tracks &amp; Agenda</h1>
+            <p class="tracks-agenda-subtitle">
+              Four focused tracks, three days of talks and hands-on workshops.
+              Pick a track to see exactly what you'll learn.
+            </p>
+          </div>
+        </div>
+ 
+        <!-- Icon sprite: defined once, reused everywhere below via <use>.
+             Keeps the markup DRY and makes icons trivial to swap later. -->
+        <svg class="icon-sprite" aria-hidden="true">
+          <defs>
+            <!-- AI / ML: chip -->
+            <symbol id="icon-cpu" viewBox="0 0 24 24">
+              <rect x="6" y="6" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"></rect>
+              <path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+            </symbol>
+            <!-- Cloud & DevOps: cloud -->
+            <symbol id="icon-cloud" viewBox="0 0 24 24">
+              <path d="M17.5 19H8a5 5 0 1 1 .7-9.95A6 6 0 0 1 20.5 12a4 4 0 0 1-3 7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+            </symbol>
+            <!-- Frontend: code brackets -->
+            <symbol id="icon-code" viewBox="0 0 24 24">
+              <polyline points="8 6 2 12 8 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></polyline>
+              <polyline points="16 6 22 12 16 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></polyline>
+            </symbol>
+            <!-- Security: shield check -->
+            <symbol id="icon-shield" viewBox="0 0 24 24">
+              <path d="M12 2l8 3.5v5.5c0 5-3.4 8.5-8 11-4.6-2.5-8-6-8-11V5.5L12 2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+              <polyline points="8.5 12 11 14.5 15.5 9.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></polyline>
+            </symbol>
+            <!-- Format: workshop -->
+            <symbol id="icon-workshop" viewBox="0 0 24 24">
+              <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3.5 17.5v3h3l5.8-5.8a4 4 0 0 0 5.4-5.4l-2.8 2.8-2-2 2.8-2.8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+            </symbol>
+            <!-- Format: talk -->
+            <symbol id="icon-talk" viewBox="0 0 24 24">
+              <rect x="9" y="2" width="6" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"></rect>
+              <path d="M5 10.5v1a7 7 0 0 0 14 0v-1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+              <line x1="12" y1="18.5" x2="12" y2="22" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></line>
+              <line x1="8" y1="22" x2="16" y2="22" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></line>
+            </symbol>
+            <!-- Format: keynote -->
+            <symbol id="icon-keynote" viewBox="0 0 24 24">
+              <path d="M12 2.5l2.7 5.9 6.3.7-4.8 4.4 1.4 6.3-5.6-3.3-5.6 3.3 1.4-6.3-4.8-4.4 6.3-.7z" fill="currentColor" stroke="none"></path>
+            </symbol>
+            <!-- Clock, used next to every session time -->
+            <symbol id="icon-clock" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"></circle>
+              <polyline points="12 7.5 12 12 15.5 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></polyline>
+            </symbol>
+          </defs>
+        </svg>
+ 
+        <div class="tracks-wrapper">
+ 
+          <!-- Hidden radio inputs power the tab switching (pure CSS, no JS) -->
+          <input type="radio" name="track-tab" id="tab-ai" class="tab-input" checked>
+          <input type="radio" name="track-tab" id="tab-cloud" class="tab-input">
+          <input type="radio" name="track-tab" id="tab-frontend" class="tab-input">
+          <input type="radio" name="track-tab" id="tab-security" class="tab-input">
+ 
+          <!-- Track tab navigation -->
+          <div class="tab-nav">
+            <label for="tab-ai" class="tab-label tab-ai-label">
+              <svg class="tab-icon"><use href="#icon-cpu"></use></svg>
+              <span>AI / ML</span>
+            </label>
+            <label for="tab-cloud" class="tab-label tab-cloud-label">
+              <svg class="tab-icon"><use href="#icon-cloud"></use></svg>
+              <span>Cloud &amp; DevOps</span>
+            </label>
+            <label for="tab-frontend" class="tab-label tab-frontend-label">
+              <svg class="tab-icon"><use href="#icon-code"></use></svg>
+              <span>Frontend</span>
+            </label>
+            <label for="tab-security" class="tab-label tab-security-label">
+              <svg class="tab-icon"><use href="#icon-shield"></use></svg>
+              <span>Security</span>
+            </label>
+          </div>
+ 
+          <!-- Difficulty key -->
+          <div class="level-legend">
+            <span class="legend-item level-beginner"><i class="level-dot"></i>Beginner</span>
+            <span class="legend-item level-intermediate"><i class="level-dot"></i>Intermediate</span>
+            <span class="legend-item level-advanced"><i class="level-dot"></i>Advanced</span>
+            <span class="legend-item level-all"><i class="level-dot"></i>All Levels</span>
+          </div>
+ 
+          <!-- Track content panels: only the one matching the checked
+               radio above is displayed (see the :checked ~ rules in style.css) -->
+          <div class="tab-panels">
+ 
+            <!-- ===== AI / ML ===== -->
+            <div class="tab-panel panel-ai">
+ 
+              <div class="agenda-item">
+                <div class="agenda-when">
+                  <span class="agenda-day">Day 1</span>
+                  <span class="agenda-time"><svg class="time-icon"><use href="#icon-clock"></use></svg>10:00 AM</span>
+                </div>
+                <div class="agenda-format"><svg class="format-icon"><use href="#icon-keynote"></use></svg><span>Keynote</span></div>
+                <div class="agenda-main">
+                  <h3>The State of Foundation Models in 2026</h3>
+                  <p class="agenda-speaker">Andrej Karpathy &middot; Pretraining team, Anthropic</p>
+                  <div class="agenda-tags">
+                    <span class="agenda-tag">Foundation Models</span>
+                    <span class="agenda-tag">Scaling Laws</span>
+                  </div>
+                </div>
+                <div class="agenda-level level-all"><i class="level-dot"></i>All Levels</div>
+              </div>
+ 
+              <div class="agenda-item">
+                <div class="agenda-when">
+                  <span class="agenda-day">Day 1</span>
+                  <span class="agenda-time"><svg class="time-icon"><use href="#icon-clock"></use></svg>2:00 PM</span>
+                </div>
+                <div class="agenda-format"><svg class="format-icon"><use href="#icon-workshop"></use></svg><span>Workshop</span></div>
+                <div class="agenda-main">
+                  <h3>Fine-Tuning LLMs on a Budget: LoRA &amp; QLoRA in Practice</h3>
+                  <p class="agenda-speaker">Hands-on lab &middot; bring a laptop with Python 3.10+</p>
+                  <div class="agenda-tags">
+                    <span class="agenda-tag">PyTorch</span>
+                    <span class="agenda-tag">Hugging Face</span>
+                  </div>
+                </div>
+                <div class="agenda-level level-intermediate"><i class="level-dot"></i>Intermediate</div>
+              </div>
+ 
+              <div class="agenda-item">
+                <div class="agenda-when">
+                  <span class="agenda-day">Day 2</span>
+                  <span class="agenda-time"><svg class="time-icon"><use href="#icon-clock"></use></svg>11:00 AM</span>
+                </div>
+                <div class="agenda-format"><svg class="format-icon"><use href="#icon-talk"></use></svg><span>Talk</span></div>
+                <div class="agenda-main">
+                  <h3>Building Reliable AI Agents with Tool Use</h3>
+                  <p class="agenda-speaker">Patterns for keeping multi-step agents on task</p>
+                  <div class="agenda-tags">
+                    <span class="agenda-tag">Python</span>
+                    <span class="agenda-tag">LangChain</span>
+                  </div>
+                </div>
+                <div class="agenda-level level-intermediate"><i class="level-dot"></i>Intermediate</div>
+              </div>
+ 
+              <div class="agenda-item">
+                <div class="agenda-when">
+                  <span class="agenda-day">Day 3</span>
+                  <span class="agenda-time"><svg class="time-icon"><use href="#icon-clock"></use></svg>9:30 AM</span>
+                </div>
+                <div class="agenda-format"><svg class="format-icon"><use href="#icon-workshop"></use></svg><span>Workshop</span></div>
+                <div class="agenda-main">
+                  <h3>Retrieval-Augmented Generation from Scratch</h3>
+                  <p class="agenda-speaker">Hands-on lab &middot; build a working RAG pipeline end to end</p>
+                  <div class="agenda-tags">
+                    <span class="agenda-tag">Python</span>
+                    <span class="agenda-tag">Vector DBs</span>
+                  </div>
+                </div>
+                <div class="agenda-level level-advanced"><i class="level-dot"></i>Advanced</div>
+              </div>
+ 
+            </div>
+ 
+            <!-- ===== Cloud & DevOps ===== -->
+            <div class="tab-panel panel-cloud">
+ 
+              <div class="agenda-item">
+                <div class="agenda-when">
+                  <span class="agenda-day">Day 1</span>
+                  <span class="agenda-time"><svg class="time-icon"><use href="#icon-clock"></use></svg>10:00 AM</span>
+                </div>
+                <div class="agenda-format"><svg class="format-icon"><use href="#icon-keynote"></use></svg><span>Keynote</span></div>
+                <div class="agenda-main">
+                  <h3>Scaling Infrastructure for the AI Era</h3>
+                  <p class="agenda-speaker">Demis Hassabis &middot; Co-Founder and CEO, Google DeepMind</p>
+                  <div class="agenda-tags">
+                    <span class="agenda-tag">Distributed Systems</span>
+                    <span class="agenda-tag">Infrastructure</span>
+                  </div>
+                </div>
+                <div class="agenda-level level-all"><i class="level-dot"></i>All Levels</div>
+              </div>
+ 
+              <div class="agenda-item">
+                <div class="agenda-when">
+                  <span class="agenda-day">Day 1</span>
+                  <span class="agenda-time"><svg class="time-icon"><use href="#icon-clock"></use></svg>1:00 PM</span>
+                </div>
+                <div class="agenda-format"><svg class="format-icon"><use href="#icon-workshop"></use></svg><span>Workshop</span></div>
+                <div class="agenda-main">
+                  <h3>Kubernetes at Scale: Lessons from Production</h3>
+                  <p class="agenda-speaker">Hands-on lab &middot; a starter cluster is provided</p>
+                  <div class="agenda-tags">
+                    <span class="agenda-tag">Kubernetes</span>
+                    <span class="agenda-tag">Docker</span>
+                  </div>
+                </div>
+                <div class="agenda-level level-intermediate"><i class="level-dot"></i>Intermediate</div>
+              </div>
+ 
+              <div class="agenda-item">
+                <div class="agenda-when">
+                  <span class="agenda-day">Day 2</span>
+                  <span class="agenda-time"><svg class="time-icon"><use href="#icon-clock"></use></svg>3:00 PM</span>
+                </div>
+                <div class="agenda-format"><svg class="format-icon"><use href="#icon-talk"></use></svg><span>Talk</span></div>
+                <div class="agenda-main">
+                  <h3>GitOps &amp; Continuous Deployment Pipelines</h3>
+                  <p class="agenda-speaker">Shipping safely without a human in every loop</p>
+                  <div class="agenda-tags">
+                    <span class="agenda-tag">ArgoCD</span>
+                    <span class="agenda-tag">CI/CD</span>
+                  </div>
+                </div>
+                <div class="agenda-level level-intermediate"><i class="level-dot"></i>Intermediate</div>
+              </div>
+ 
+              <div class="agenda-item">
+                <div class="agenda-when">
+                  <span class="agenda-day">Day 3</span>
+                  <span class="agenda-time"><svg class="time-icon"><use href="#icon-clock"></use></svg>11:00 AM</span>
+                </div>
+                <div class="agenda-format"><svg class="format-icon"><use href="#icon-workshop"></use></svg><span>Workshop</span></div>
+                <div class="agenda-main">
+                  <h3>Observability Deep Dive: Tracing Distributed Systems</h3>
+                  <p class="agenda-speaker">Hands-on lab &middot; instrument a sample microservice live</p>
+                  <div class="agenda-tags">
+                    <span class="agenda-tag">OpenTelemetry</span>
+                    <span class="agenda-tag">Grafana</span>
+                  </div>
+                </div>
+                <div class="agenda-level level-advanced"><i class="level-dot"></i>Advanced</div>
+              </div>
+ 
+            </div>
+ 
+            <!-- ===== Frontend ===== -->
+            <div class="tab-panel panel-frontend">
+ 
+              <div class="agenda-item">
+                <div class="agenda-when">
+                  <span class="agenda-day">Day 1</span>
+                  <span class="agenda-time"><svg class="time-icon"><use href="#icon-clock"></use></svg>11:00 AM</span>
+                </div>
+                <div class="agenda-format"><svg class="format-icon"><use href="#icon-talk"></use></svg><span>Talk</span></div>
+                <div class="agenda-main">
+                  <h3>The Future of Web Frameworks</h3>
+                  <p class="agenda-speaker">Gary Marcus &middot; Staff Engineer, Vercel</p>
+                  <div class="agenda-tags">
+                    <span class="agenda-tag">React</span>
+                    <span class="agenda-tag">Web Standards</span>
+                  </div>
+                </div>
+                <div class="agenda-level level-all"><i class="level-dot"></i>All Levels</div>
+              </div>
+ 
+              <div class="agenda-item">
+                <div class="agenda-when">
+                  <span class="agenda-day">Day 1</span>
+                  <span class="agenda-time"><svg class="time-icon"><use href="#icon-clock"></use></svg>3:00 PM</span>
+                </div>
+                <div class="agenda-format"><svg class="format-icon"><use href="#icon-workshop"></use></svg><span>Workshop</span></div>
+                <div class="agenda-main">
+                  <h3>Building Accessible Component Libraries</h3>
+                  <p class="agenda-speaker">Hands-on lab &middot; audit and fix real components</p>
+                  <div class="agenda-tags">
+                    <span class="agenda-tag">React</span>
+                    <span class="agenda-tag">ARIA</span>
+                  </div>
+                </div>
+                <div class="agenda-level level-intermediate"><i class="level-dot"></i>Intermediate</div>
+              </div>
+ 
+              <div class="agenda-item">
+                <div class="agenda-when">
+                  <span class="agenda-day">Day 2</span>
+                  <span class="agenda-time"><svg class="time-icon"><use href="#icon-clock"></use></svg>10:00 AM</span>
+                </div>
+                <div class="agenda-format"><svg class="format-icon"><use href="#icon-talk"></use></svg><span>Talk</span></div>
+                <div class="agenda-main">
+                  <h3>Performance Budgets That Actually Work</h3>
+                  <p class="agenda-speaker">Making Core Web Vitals a CI gate, not an afterthought</p>
+                  <div class="agenda-tags">
+                    <span class="agenda-tag">Web Vitals</span>
+                    <span class="agenda-tag">Vite</span>
+                  </div>
+                </div>
+                <div class="agenda-level level-intermediate"><i class="level-dot"></i>Intermediate</div>
+              </div>
+ 
+              <div class="agenda-item">
+                <div class="agenda-when">
+                  <span class="agenda-day">Day 3</span>
+                  <span class="agenda-time"><svg class="time-icon"><use href="#icon-clock"></use></svg>1:00 PM</span>
+                </div>
+                <div class="agenda-format"><svg class="format-icon"><use href="#icon-workshop"></use></svg><span>Workshop</span></div>
+                <div class="agenda-main">
+                  <h3>Edge Rendering with Modern Meta-Frameworks</h3>
+                  <p class="agenda-speaker">Hands-on lab &middot; deploy a streaming SSR app to the edge</p>
+                  <div class="agenda-tags">
+                    <span class="agenda-tag">Next.js</span>
+                    <span class="agenda-tag">Edge Functions</span>
+                  </div>
+                </div>
+                <div class="agenda-level level-advanced"><i class="level-dot"></i>Advanced</div>
+              </div>
+ 
+            </div>
+ 
+            <!-- ===== Security ===== -->
+            <div class="tab-panel panel-security">
+ 
+              <div class="agenda-item">
+                <div class="agenda-when">
+                  <span class="agenda-day">Day 1</span>
+                  <span class="agenda-time"><svg class="time-icon"><use href="#icon-clock"></use></svg>2:00 PM</span>
+                </div>
+                <div class="agenda-format"><svg class="format-icon"><use href="#icon-keynote"></use></svg><span>Keynote</span></div>
+                <div class="agenda-main">
+                  <h3>Securing the AI Supply Chain</h3>
+                  <p class="agenda-speaker">Mustafa Suleyman &middot; CEO of Microsoft AI</p>
+                  <div class="agenda-tags">
+                    <span class="agenda-tag">Supply Chain</span>
+                    <span class="agenda-tag">AI Safety</span>
+                  </div>
+                </div>
+                <div class="agenda-level level-all"><i class="level-dot"></i>All Levels</div>
+              </div>
+ 
+              <div class="agenda-item">
+                <div class="agenda-when">
+                  <span class="agenda-day">Day 2</span>
+                  <span class="agenda-time"><svg class="time-icon"><use href="#icon-clock"></use></svg>9:30 AM</span>
+                </div>
+                <div class="agenda-format"><svg class="format-icon"><use href="#icon-workshop"></use></svg><span>Workshop</span></div>
+                <div class="agenda-main">
+                  <h3>Threat Modeling for Modern APIs</h3>
+                  <p class="agenda-speaker">Hands-on lab &middot; work through a real API spec together</p>
+                  <div class="agenda-tags">
+                    <span class="agenda-tag">OWASP</span>
+                    <span class="agenda-tag">API Security</span>
+                  </div>
+                </div>
+                <div class="agenda-level level-intermediate"><i class="level-dot"></i>Intermediate</div>
+              </div>
+ 
+              <div class="agenda-item">
+                <div class="agenda-when">
+                  <span class="agenda-day">Day 2</span>
+                  <span class="agenda-time"><svg class="time-icon"><use href="#icon-clock"></use></svg>2:00 PM</span>
+                </div>
+                <div class="agenda-format"><svg class="format-icon"><use href="#icon-talk"></use></svg><span>Talk</span></div>
+                <div class="agenda-main">
+                  <h3>Zero Trust Architecture in Practice</h3>
+                  <p class="agenda-speaker">Rolling out Zero Trust without breaking every team's workflow</p>
+                  <div class="agenda-tags">
+                    <span class="agenda-tag">Zero Trust</span>
+                    <span class="agenda-tag">IAM</span>
+                  </div>
+                </div>
+                <div class="agenda-level level-intermediate"><i class="level-dot"></i>Intermediate</div>
+              </div>
+ 
+              <div class="agenda-item">
+                <div class="agenda-when">
+                  <span class="agenda-day">Day 3</span>
+                  <span class="agenda-time"><svg class="time-icon"><use href="#icon-clock"></use></svg>10:00 AM</span>
+                </div>
+                <div class="agenda-format"><svg class="format-icon"><use href="#icon-workshop"></use></svg><span>Workshop</span></div>
+                <div class="agenda-main">
+                  <h3>Hands-on Penetration Testing Lab</h3>
+                  <p class="agenda-speaker">Hands-on lab &middot; capture-the-flag style exercises</p>
+                  <div class="agenda-tags">
+                    <span class="agenda-tag">Burp Suite</span>
+                    <span class="agenda-tag">Pentesting</span>
+                  </div>
+                </div>
+                <div class="agenda-level level-advanced"><i class="level-dot"></i>Advanced</div>
+              </div>
+ 
+            </div>
+ 
+          </div>
+        </div>
+    </section>
+    <!-- END -->
 </main>
 
 
